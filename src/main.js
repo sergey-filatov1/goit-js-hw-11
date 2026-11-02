@@ -3,7 +3,6 @@ import { getImagesByQuery } from './js/pixabay-api';
 import {
     renderGallery,
     clearGallery,
-    refreshGallery,
     showLoader,
     hideLoader,
 } from './js/render-functions';
@@ -41,9 +40,10 @@ function onSearch(event) {
             }
 
             renderGallery(data.hits);
-            refreshGallery();
+
         })
-        .catch(() => {
+        .catch(error => {
+            console.error('Search error:', error);
             iziToast.error({
                 message: 'Something went wrong. Please try again!',
             });

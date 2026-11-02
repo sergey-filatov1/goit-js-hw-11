@@ -43,6 +43,7 @@ export function createGallery(images) {
 
 export function renderGallery(images) {
     gallery.innerHTML = createGallery(images);
+    lightbox.refresh();
 }
 
 export function clearGallery() {
