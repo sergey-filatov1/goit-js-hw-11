@@ -41,6 +41,10 @@ export function createGallery(images) {
         .join('');
 }
 
+export function renderGallery(images) {
+    gallery.innerHTML = createGallery(images);
+}
+
 export function clearGallery() {
     gallery.innerHTML = '';
 }
